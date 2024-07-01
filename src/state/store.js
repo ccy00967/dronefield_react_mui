@@ -1,11 +1,24 @@
 import { configureStore } from '@reduxjs/toolkit'
+import counterSlice from './couter'
+import { persisted_reducer } from './persist'
+
+
 
 // 이제 slice들을 store로 만들기 -> slice들의 reducer를 store에 모으기
 // 각각의 slice들의 reducer들이 들어간다
 // [이름]: [해당]slice.reducer
 const store = configureStore({
   reducer: {
+    counter: counterSlice.reducer,
+    // userInfo: userInfoSlice.reducer, // persistance로 새로고침으로 인한 데이터 삭제 방지
+    persist: persisted_reducer, // 로컬에 저장될 데이터들을 persist로 불러올수 있게된다
   },
+
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    serializableCheck: false
+  }),
+  // middleware: (getDefaultMiddleware) => [...getDefaultMiddleware()],
+  // 미들웨어 이해하기
 })
 
 export default store

@@ -5,7 +5,9 @@ import logo from '../../assets/img/dronefield_logo.jpg'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-//ㅎㅇ
+import Typography from '@mui/material/Typography';
+import { useSelector } from "react-redux";
+
 export function HomePage() {
     return (
         <div style={{
@@ -15,47 +17,54 @@ export function HomePage() {
             backgroundSize: "cover",
             backgroundPosition: "center center",
         }}>
-            <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="fixed" elevation={0} component="nav" style={{ backgroundColor: "rgba(255,255,255,0.5)" }} >
-                    <Toolbar>
-                        <Grid container direction="row" justifyContent="space-evenly" alignItems="center">
-                            <Box
-                                //my={4}
-                                display="flex"
-                                alignItems="center"
-                                gap={4}
-                                p={2}
-                                //sx={{ border: '2px solid grey' }}
-                            >
-                                <Button>
-                                    <img href="/" src={logo} alt="Logo" width="60px" height="60px"></img>
-                                </Button>
-                            </Box>
-                            <Button href="/a" variant="text" xs={4}>소개</Button>
-                            <Button href="/a" variant="text" xs={4}>연결 업체</Button>
-                            <Button href="/a" variant="text" xs={4}>고객센터</Button>
-                            <ButtonGroup>
-                                <Button href="/login" variant="contained">로그인</Button>
-                                <Button href="/resigter" variant="outlined">회원가입</Button>
-                            </ButtonGroup>
-                        </Grid>
-                    </Toolbar>
-                </AppBar>
-            </Box>
+            <Container sx={{ width: "75%" }} maxWidth="mx">
+                <Box sx={{ height: '100vh' }} >
 
-            <Container fluid style={{
-                width: "100px",
-                height: "1000px",
-                backgroundColor: "green",
-            }}>
-                <h1>Hi, There!</h1>
+                    <Typography variant="h1" gutterBottom>
+                        h1. 드론평야
+                    </Typography>
+                    <Typography variant="h2" gutterBottom>
+                        h2. 소개말 등 넣기
+                    </Typography>
+                </Box>
             </Container>
-            <Container fluid style={{
-                width: "100px",
-                height: "1000px",
-                backgroundColor: "green",
-            }}>
-                <h1>Hi, There!</h1>
+
+            <Box height={100}>컴포넌트 사이에 넣을 패딩역할</Box>
+
+            <Container maxWidth="lg">
+                <Box sx={{ backgroundColor: "yellow", textAlign: "left" }}>
+                    <Typography variant="h1" textAlign={"left"} gutterBottom>
+                        h1. 드론평야에 대하여
+                    </Typography>
+                    <Typography variant="h2" gutterBottom>
+                        h2. 뭐 더 설명할말 넣기
+                    </Typography>
+                    <Typography variant="h3" gutterBottom>
+                        h3. 뭐 더 설명할말 넣기
+                    </Typography>
+                </Box>
+            </Container>
+
+            <Box height={100}>컴포넌트 사이에 넣을 패딩역할</Box>
+
+            <Container maxWidth="lg">
+                <Box sx={{ backgroundColor: "yellow", textAlign: "left" }}>
+                    <Typography variant="h1" textAlign={"left"} gutterBottom>
+                        h1. 그다음에 할말
+                    </Typography>
+                    <Typography variant="h2" gutterBottom>
+                        h2. 뭐 더 설명할말 넣기
+                    </Typography>
+                    <Typography variant="h3" gutterBottom>
+                        h3. 뭐 더 설명할말 넣기
+                    </Typography>
+                    <Typography variant="h3" gutterBottom>
+                        h3. 뭐 더 설명할말 넣기
+                    </Typography>
+                    <Typography variant="h3" gutterBottom>
+                        h3. 뭐 더 설명할말 넣기
+                    </Typography>
+                </Box>
             </Container>
         </div>
     )
